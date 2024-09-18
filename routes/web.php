@@ -16,6 +16,9 @@ Route::get('/', function () {
     return view('welcome');
 })->name('home')->middleware(['auth']);
 
+Route::resource('permissions', \App\Http\Controllers\PermissionsController::class)->middleware(['auth'])
+    ->name('index','permissions');
+
 Route::controller(\App\Http\Controllers\Login::class)->middleware([\App\Http\Middleware\Login::class])
     ->group(function () {
         Route::get('/login', 'show')->name('login')->middleware(['guest']);
