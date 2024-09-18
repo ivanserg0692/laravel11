@@ -23,6 +23,6 @@ class Users extends Seeder
         $roles = $admin->roles();
         $admin->save();
         $roles->attach(1);
-        $users = User::factory()->count(50)->create();
+        User::factory()->count(50)->create();
     }
 }
