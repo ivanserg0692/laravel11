@@ -2,6 +2,7 @@
 @php
     /**
      * @var \Illuminate\Support\ViewErrorBag $errors
+     * @var \App\Models\User $user
     */
 @endphp
 

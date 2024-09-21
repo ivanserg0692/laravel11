@@ -5,16 +5,17 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StorepermissionsRequest;
 use App\Http\Requests\UpdatepermissionsRequest;
 use App\Models\Permissions;
+use App\Models\User;
+use Illuminate\Http\Request;
 
 class PermissionsController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
-        return view('pages.permissions.index');
+        return view('pages.permissions.index', ['user' => $request->user()]);
     }
 
     /**
